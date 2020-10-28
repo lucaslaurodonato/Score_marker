@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dupla1"
+            type="com.lucasdonato.marcadordetruco.model.PlayersDao" />
+
+        <variable
+            name="dupla2"
+            type="com.lucasdonato.marcadordetruco.model.PlayersDao" />
+
+        <variable
+            name="activity"
+            type="com.lucasdonato.marcadordetruco.MainActivity" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_smoke">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toTopOf="@id/constraintLayout2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/name_player_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:text="@{dupla1.name}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Lucas Donato" />
+
+            <TextView
+                android:id="@+id/score_player_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:text="@{String.valueOf(dupla1.score)}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name_player_one"
+                tools:text="03" />
+
+            <Button
+                android:id="@+id/one_score"
+                style="@style/button_default_player_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:elevation="@dimen/small_margin"
+                android:onClick="@{(view) -> activity.sumScore(view, dupla1)}"
+                android:text="@string/one"
+                app:layout_constraintEnd_toStartOf="@id/truco_player_one"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/score_player_one" />
+
+            <Button
+                android:id="@+id/truco_player_one"
+                style="@style/button_default_player_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:elevation="@dimen/small_margin"
+                android:onClick="@{(view) -> activity.sumScore(view, dupla1)}"
+                android:text="@string/truco"
+                app:layout_constraintEnd_toStartOf="@id/six_player_one"
+                app:layout_constraintStart_toEndOf="@+id/one_score"
+                app:layout_constraintTop_toBottomOf="@+id/score_player_one" />
+
+            <Button
+                android:id="@+id/six_player_one"
+                style="@style/button_default_player_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:elevation="@dimen/small_margin"
+                android:onClick="@{(view) -> activity.sumScore(view, dupla1)}"
+                android:text="@string/six"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/truco_player_one"
+                app:layout_constraintTop_toBottomOf="@id/score_player_one" />
+
+            <Button
+                android:id="@+id/nine_player_one"
+                style="@style/button_default_player_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:elevation="@dimen/small_margin"
+                android:onClick="@{(view) -> activity.sumScore(view, dupla1)}"
+                android:text="@string/nine"
+                app:layout_constraintEnd_toStartOf="@id/twelve_player_one"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/one_score" />
+
+            <Button
+                android:id="@+id/twelve_player_one"
+                style="@style/button_default_player_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:elevation="@dimen/small_margin"
+                android:onClick="@{(view) -> activity.sumScore(view, dupla1)}"
+                android:text="@string/twelve"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/nine_player_one"
+                app:layout_constraintTop_toBottomOf="@id/one_score" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/match_constraint"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout">
+
+            <TextView
+                android:id="@+id/name_player_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{dupla2.name}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Lucas Donato" />
+
+            <TextView
+                android:id="@+id/score_player_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:text="@{String.valueOf(dupla2.score)}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name_player_two"
+                tools:text="12" />
+
+            <Button
+                android:id="@+id/one_score_player_two"
+                style="@style/button_default_player_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:elevation="@dimen/small_margin"
+                android:onClick="@{(view) -> activity.sumScore(view, dupla2)}"
+                android:text="@string/one"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/truco_player_two"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/score_player_two" />
+
+            <Button
+                android:id="@+id/truco_player_two"
+                style="@style/button_default_player_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:elevation="@dimen/small_margin"
+                android:onClick="@{(view) -> activity.sumScore(view, dupla2)}"
+                android:text="@string/truco"
+                app:layout_constraintEnd_toStartOf="@id/six_player_two"
+                app:layout_constraintStart_toEndOf="@+id/one_score_player_two"
+                app:layout_constraintTop_toBottomOf="@+id/score_player_two" />
+
+            <Button
+                android:id="@+id/six_player_two"
+                style="@style/button_default_player_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:elevation="@dimen/small_margin"
+                android:onClick="@{(view) -> activity.sumScore(view, dupla2)}"
+                android:text="@string/six"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/truco_player_two"
+                app:layout_constraintTop_toBottomOf="@id/score_player_two" />
+
+            <Button
+                android:id="@+id/nine_player_two"
+                style="@style/button_default_player_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:elevation="@dimen/small_margin"
+                android:onClick="@{(view) -> activity.sumScore(view, dupla2)}"
+                android:text="@string/nine"
+                app:layout_constraintEnd_toStartOf="@id/twelve_player_two"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/one_score_player_two" />
+
+            <Button
+                android:id="@+id/twelve_player_two"
+                style="@style/button_default_player_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:elevation="@dimen/small_margin"
+                android:onClick="@{(view) -> activity.sumScore(view, dupla2)}"
+                android:text="@string/twelve"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/nine_player_two"
+                app:layout_constraintTop_toBottomOf="@id/one_score_player_two" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/restartGameActionButton"
+                style="@style/button_default_player_two"
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:elevation="@dimen/small_margin"
+                android:text="@string/restart_game"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,31 @@
+<resources>
+
+    <string name="app_name">Marcador de Truco</string>
+    <string name="players_1">Dupla 1</string>
+    <string name="names_hint">Ex: Mata pato</string>
+    <string name="one">1 Tento</string>
+    <string name="truco">Truco</string>
+    <string name="six">Seis</string>
+    <string name="nine">Nove!</string>
+    <string name="twelve">Doze!</string>
+    <string name="no_score">00</string>
+    <string name="players_2">Dupla 2</string>
+    <string name="now">Agora!</string>
+    <string name="run_bitch">Arregaram</string>
+    <string name="play_again">Jogar outra?</string>
+    <string name="start">Começar</string>
+    <string name="restart_game">Reiniciar?</string>
+
+    <!--Error message-->
+    <string name="invalid_name_player_one">Escolha um nome para dupla 1</string>
+    <string name="invalid_name_player_two">Escolha um nome para dupla 2</string>
+
+    <!--Dialog restart game-->
+    <string name="yes">yep!</string>
+    <string name="no">to sussa!</string>
+    <string name="restart">Quer reiniciar a partida?</string>
+
+    <!--Toast-->
+    <string name="toast_info_new_match">Clique no botão com as cartas para começar uma nova partida</string>
+
+</resources>
